@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:endpoint2]
-  def home
-    comment=Comment.all
-    render json:{data:comment}
+  #This line is for testing
+  if Rails.env.development?
+    skip_before_action :verify_authenticity_token, only: [:endpoint2]
   end
   def endpoint2
     id=params['feature_id'].split("/")[0].to_i
