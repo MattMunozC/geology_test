@@ -1,7 +1,7 @@
 class CreateData < ActiveRecord::Migration[7.1]
   def change
-    create_table :data, id: false do |t|
-      t.string :id
+    create_table :data do |t|
+      t.string :external_id
       t.boolean :tsunami
       t.string :magType
       t.text :url
@@ -9,9 +9,10 @@ class CreateData < ActiveRecord::Migration[7.1]
       t.string :title
       t.timestamps
     end
-    add_column :data, :magnitud, :decimal
+    add_column :data, :magnitude, :decimal
     add_column :data, :longitude, :decimal
     add_column :data, :latitude, :decimal
-    add_column :data, :time, :timestamps
+    add_column :data, :time, :string
+
   end
 end

@@ -6,14 +6,16 @@ namespace :fetch do
         response['features'].each do |entry|
             properties=entry['properties']
             geometry=entry['geometry']['coordinates']
-            fetched={   id: entry['id'],
+            fetched={   external_id: entry['id'],
                         url: properties['url'],
                         title: properties['title'],
                         place: properties['place'],
                         magType: properties['magType'],
-                        magnitud: properties['mag'],
+                        magnitude: properties['mag'],
                         latitude: geometry[0],
-                        longitude: geometry[1]
+                        longitude: geometry[1],
+                        time: properties["time"],
+                        tsunami: properties["tsunami"]
                     }
             saved=Datum.new(fetched)
             if saved.save

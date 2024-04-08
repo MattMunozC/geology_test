@@ -11,8 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_04_08_172919) do
-  create_table "data", id: false, force: :cascade do |t|
-    t.string "id"
+  create_table "data", force: :cascade do |t|
+    t.string "external_id"
     t.boolean "tsunami"
     t.string "magType"
     t.text "url"
@@ -20,10 +20,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_08_172919) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "magnitud"
+    t.decimal "magnitude"
     t.decimal "longitude"
     t.decimal "latitude"
-    t.datetime "time", precision: nil
+    t.string "time"
   end
 
 end
