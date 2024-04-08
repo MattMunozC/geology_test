@@ -9,7 +9,7 @@ Things you may want to cover:
 
 * System dependencies: Httparty is required
 
-* Configuration
+* Configuration: To install httparty you must run gem install httparty, once it is installed you must add gem "httparty" to gemfile (this step is already done), then you must run buddle install.
 
 * Database creation: Run the command rails db:migrate to create the scheme
 
