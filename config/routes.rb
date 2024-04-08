@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   root "pages#home"
 
   get "/api/features", to:"pages#endpoint1"
-  
+  post "/api/features/*feature_id", to:"pages#endpoint2"
   # root "posts#index"
 end

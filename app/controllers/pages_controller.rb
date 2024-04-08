@@ -1,7 +1,13 @@
 class PagesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:endpoint2]
   def home
-    data=Datum.limit(10).offset(100)
-    render json: {offset:10,data:data}
+    comment=Comment.all
+    render json:{data:comment}
+  end
+  def endpoint2
+    id=params['feature_id'].split("/")[0].to_i
+    insert=Comment.new({datum_id:id,comment:params['body']})
+    insert.save 
   end
   def endpoint1
     page=params[:page].to_i

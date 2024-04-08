@@ -1,6 +1,6 @@
 class Datum < ApplicationRecord
 
-    
+    has_many :comments
     validates :url, presence: true
     validates :title, presence: true
     validates :place, presence: true
