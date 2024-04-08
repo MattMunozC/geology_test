@@ -5,9 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 7.1.0
 
-* System dependencies
+* System dependencies: Httparty is required
 
 * Configuration
 
