@@ -16,10 +16,10 @@ class PagesController < ApplicationController
       data=Datum.where(magType:mag_types)
     else
       data=Datum.all
-      puts data.count
     end
     if per_page!=0 and per_page<=1000 then
-      total=(data.count/per_page).ceil
+      puts "total: #{(data.count.to_f/per_page).ceil}"
+      total=(data.count.to_f/per_page).ceil
       if page!=0 then
         data=data.limit(per_page).offset((page-1)*per_page)
       end
@@ -55,7 +55,7 @@ class PagesController < ApplicationController
         }
         }
     else
-      render :home
+      raise StandardError, "per_pager higher than 1000"
     end
   end
 end
