@@ -5,15 +5,15 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 7.1.0
 
-* System dependencies
+* System dependencies: Httparty is required
 
-* Configuration
+* Configuration: To install httparty you must run gem install httparty, once it is installed you must add gem "httparty" to gemfile (this step is already done), then you must run buddle install.
 
-* Database creation
+* Database creation: Run the command rails db:migrate to create the scheme
 
-* Database initialization
+* Database initialization:  once the scheme is created you need to run the get_info task from the fetch rake (fetch:get_info) to populate the database
 
 * How to run the test suite
 
