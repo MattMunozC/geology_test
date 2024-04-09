@@ -17,10 +17,9 @@ class PagesController < ApplicationController
     else
       data=Datum.all
     end
-    if per_page!=0 and per_page<=1000 then
-      puts "total: #{(data.count.to_f/per_page).ceil}"
+    if per_page>0 and per_page<=1000 then
       total=(data.count.to_f/per_page).ceil
-      if page!=0 then
+      if page>0 then
         data=data.limit(per_page).offset((page-1)*per_page)
       end
       serialize=[]
